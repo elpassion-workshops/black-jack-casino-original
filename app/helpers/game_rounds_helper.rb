@@ -1,16 +1,16 @@
 module GameRoundsHelper
   def human_card_info(card)
-    "#{human_card_pip(card)} of #{human_card_suit(card)}"
+    "#{human_card_value(card)} of #{human_card_suit(card)}"
   end
 
-  def human_card_pip(card)
-    case card.pip
+  def human_card_value(card)
+    case card.value
       when 'J' then 'Jack'
       when 'Q' then 'Queen'
       when 'K' then 'King'
       when 'A' then 'Ace'
       else
-        card.pip
+        card.value
     end
   end
 

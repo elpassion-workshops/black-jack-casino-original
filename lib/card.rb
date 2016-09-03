@@ -1,12 +1,12 @@
-class Card < Struct.new(:pip, :suit)
-  FACE_CODES = %w(J Q K)
-  ACE_CODE = 'A'
+class Card < Struct.new(:value, :suit)
+  FACE_VALUES = %w(J Q K)
+  ACE_VALUE = 'A'
 
   def face?
-    pip.in? FACE_CODES
+    value.in? FACE_VALUES
   end
 
   def ace?
-    pip == ACE_CODE
+    value == ACE_VALUE
   end
 end

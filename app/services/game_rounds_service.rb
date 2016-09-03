@@ -30,7 +30,7 @@ class GameRoundsService
       elsif card.face?
         10
       else
-        card.pip.to_i
+        card.value.to_i
       end
     end
     inject_bonus_points_for_aces initial_sum, ace_count
