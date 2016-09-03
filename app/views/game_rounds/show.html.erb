@@ -1,0 +1,19 @@
+<h1>Your cards:</h1>
+
+<ul>
+  <% @cards.each do |card| %>
+    <li><%= human_card_info card %></li>
+  <% end %>
+</ul>
+
+<p>You have <strong><%= @points %></strong> points.</p>
+<% if @black_jack %>
+  <p>Black Jack! You won!</p>
+<% elsif @bust %>
+  <p>You lost!</p>
+<% end %>
+
+<%= link_to 'Exit', game_round_path(@game_round), method: :delete %>
+<% unless @black_jack || @bust %>
+  | <%= link_to 'Hit', game_round_hits_path(@game_round), method: :post %>
+<% end %>
