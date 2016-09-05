@@ -1,9 +1,7 @@
 <h1>Your cards:</h1>
 
-<ul>
-  <% @cards.each do |card| %>
-    <li><%= human_card_info card %></li>
-  <% end %>
+<ul class='cards'>
+  <%= render partial: 'card', collection: @cards %>
 </ul>
 
 <p>You have <strong><%= @points %></strong> points.</p>

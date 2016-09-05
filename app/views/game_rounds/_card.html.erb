@@ -1,0 +1,4 @@
+<li>
+  <span class='card-value'><%= card.value %></span>
+  <%= content_tag :span, card_suit_symbol(card), class: ['card-suit', card.suit].join(' ') %>
+</li>
